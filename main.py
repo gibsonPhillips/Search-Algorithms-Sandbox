@@ -3,13 +3,25 @@ https://github.com/aimacode/aima-python/blob/master/search.py
 Gibson Phillips
 """
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+"""
+The output should include the results for two cities (See the sample outputs).
+▪ Two Test Cities: Arad and Bucharest, Bucharest and Craiova, and Craiova and Arad
+▪ Search Method Name
+▪ Total Cost between Two Cities
+▪ All the Intermediate Cities Between Them
+▪ Ask the Users If They Would Like to Find the Optimal Path Between Any Two
+Cities Again
+▪ Terminate the Program and Then Display "Thank You for Using Our App."
+"""
+
+def two_cities():
+    return("two cities output")
+
+def main():
+
+    ## output
+    print(two_cities())
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
