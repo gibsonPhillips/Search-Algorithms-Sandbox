@@ -13,14 +13,22 @@ The output should include the results for two cities (See the sample outputs).
 Cities Again
 ▪ Terminate the Program and Then Display "Thank You for Using Our App."
 """
+def results(algo):
+    pass
 
-def two_cities():
-    return("two cities output")
+
 
 def main():
+    city1 = input("Please input the source city")
+    city2 = input("Please input the destination city")
+    algo = input("Please select the desired search algorithm")
 
-    ## output
-    print(two_cities())
+
+    results = results(algo)
+    print(f"Path: {city1} to {city2}"
+            f"Algorithm: {algo}"
+            f"Total cost: "
+          f"Travel through: {cities}")
 
 
 if __name__ == "__main__":
