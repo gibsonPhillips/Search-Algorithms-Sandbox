@@ -2,32 +2,42 @@
 https://github.com/aimacode/aima-python/blob/master/search.py
 Gibson Phillips
 """
-
-"""
-The output should include the results for two cities (See the sample outputs).
-▪ Two Test Cities: Arad and Bucharest, Bucharest and Craiova, and Craiova and Arad
-▪ Search Method Name
-▪ Total Cost between Two Cities
-▪ All the Intermediate Cities Between Them
-▪ Ask the Users If They Would Like to Find the Optimal Path Between Any Two
-Cities Again
-▪ Terminate the Program and Then Display "Thank You for Using Our App."
-"""
+from Search import *
 
 
+## helper fn to handle the different algorithms
 def results(algo):
     return ["city1", "city2", 300]
+
+## helper fn to prompt user for source city
+def city_1(con=0):
+    city1 = input("Please input the source city: ")
+    if city1 not in Graph.nodes(romania_map):
+        print("error: invalid City, please try again")
+        city_1()
+    return city1
+
+
+## helper fn to prompt user for destination city
+def city_2(city1):
+    city2 = input("Please input the destination city: ")
+    if city2 == city1:
+        print("error, the cities cannot be the same. Please try again. ")
+        city_2(city1)
+    elif city2 not in Graph.nodes(romania_map):
+        print("error: invalid City, please try again")
+        city_2(city1)
+    return city2
 
 
 def main(first):
     if first == 0:
         print("Welcome to Romania! Input 2 cities and ")
-
-    city1 = input("Please input the source city: ")
-    city2 = input("Please input the destination city: ")
+    city1 = city_1()
+    city2 = city_2(city1)
     algo = input("Please select the desired search algorithm: ")
 
-    cities = results(algo)
+    cities = results(f"→→{algo}→→")
     cost = cities.pop(-1)
     print(f"\nPath: {city1} to {city2}"
             f"\n\nAlgorithm: {algo}"
